@@ -38,8 +38,8 @@ _kp-create()
 		*:'Safe name:' && return
 }
 
-(( $+functions[_kp-open] )) ||
-_kp-open()
+(( $+functions[_kp-cat] )) ||
+_kp-cat()
 {
 	_arguments \
 		{-p,--password}'[Print password]' \
@@ -132,7 +132,7 @@ _kp_commands()
 		help:'Get some help' \
 		init:'Initialize a new password safe directory' \
 		{create,new,insert}:'Create a new password safe' \
-		{open,show,cat}:'Open a password safe and print its content on stdout' \
+		{cat,show}:'Open a password safe and print its content on stdout' \
 		edit:'Edit a password safe with $EDIT' \
 		copy:'Copy a password (first line of safe) into X clipboard' \
 		{list,ls}:'List available safes' \
@@ -179,10 +179,9 @@ _kickpass()
 			cmds[new]=create
 			cmds[insert]=create
 
-			# open
-			cmds[open]=open
-			cmds[show]=open
-			cmds[cat]=open
+			# cat
+			cmds[cat]=cat
+			cmds[show]=cat
 
 			# edit
 			cmds[edit]=edit
