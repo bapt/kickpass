@@ -37,7 +37,6 @@ struct kp_cmd kp_cmd_list = {
 	.usage = NULL,
 	.opts  = "list",
 	.desc  = "List available safes",
-	.lock  = false,
 };
 
 kp_error_t
